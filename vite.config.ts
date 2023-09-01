@@ -13,8 +13,20 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 // @ts-expect-error failed to resolve types
 import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
 
+import { VantResolver } from 'unplugin-vue-components/resolvers'
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 7771,
+    proxy: {
+      '/api': {
+        target: 'https://php.mmxiaowu.com',
+        changeOrigin: true,
+        rewrite: (path: string) => path.replace(/^\/api/, '/api'),
+      },
+    },
+  },
   resolve: {
     alias: {
       '~/': `${resolve(__dirname, 'src')}/`,
@@ -67,6 +79,7 @@ export default defineConfig({
      */
     Components({
       dts: 'src/components.d.ts',
+      resolvers: [VantResolver()],
     }),
 
     /**

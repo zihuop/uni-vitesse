@@ -58,8 +58,12 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-3080420230531001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3080420230531001",
     "pinia": "^2.0.36",
+    "vant": "^4.6.6",
     "vue": "^3.3.4",
-    "vue-i18n": "^9.2.2"
+    "vue-i18n": "^9.2.2",
+    "@lincy/utils": "^0.3.3",
+    "axios": "^1.4.0",
+    "store2": "^2.14.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.5",
